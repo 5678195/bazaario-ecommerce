@@ -1,0 +1,97 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#f8fafc" font-size="18" font-weight="bold">Bazaario — Production Architecture</text>
+
+  <!-- Client Layer -->
+  <rect x="50" y="55" width="700" height="60" rx="8" fill="#1e1b4b" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="400" y="78" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="bold">CLIENT LAYER</text>
+  <rect x="80" y="85" width="180" height="22" rx="4" fill="#312e81" stroke="#6366f1" stroke-width="1"/>
+  <text x="170" y="100" text-anchor="middle" fill="#e0e7ff" font-size="11">🛍️ Storefront (React)</text>
+  <rect x="310" y="85" width="180" height="22" rx="4" fill="#312e81" stroke="#6366f1" stroke-width="1"/>
+  <text x="400" y="100" text-anchor="middle" fill="#e0e7ff" font-size="11">⚙️ Admin Panel (React)</text>
+  <rect x="540" y="85" width="180" height="22" rx="4" fill="#312e81" stroke="#6366f1" stroke-width="1"/>
+  <text x="630" y="100" text-anchor="middle" fill="#e0e7ff" font-size="11">📱 Mobile Browser</text>
+
+  <!-- Arrow -->
+  <line x1="400" y1="115" x2="400" y2="145" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="415" y="133" fill="#94a3b8" font-size="10">HTTPS</text>
+
+  <!-- Nginx Layer -->
+  <rect x="50" y="148" width="700" height="44" rx="8" fill="#134e4a" stroke="#14b8a6" stroke-width="1.5"/>
+  <text x="400" y="167" text-anchor="middle" fill="#5eead4" font-size="12" font-weight="bold">Nginx Reverse Proxy + SSL (Let's Encrypt)</text>
+  <text x="400" y="184" text-anchor="middle" fill="#99f6e4" font-size="10">bazaario.duckdns.org — routes /api/* to backend services</text>
+
+  <!-- Arrow -->
+  <line x1="400" y1="192" x2="400" y2="222" stroke="#14b8a6" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Microservices -->
+  <rect x="50" y="225" width="700" height="80" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="400" y="245" text-anchor="middle" fill="#93c5fd" font-size="11" font-weight="bold">MICROSERVICES — Docker Compose</text>
+  <rect x="70" y="253" width="150" height="40" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="145" y="270" text-anchor="middle" fill="#bfdbfe" font-size="11" font-weight="bold">Users Service</text>
+  <text x="145" y="285" text-anchor="middle" fill="#93c5fd" font-size="10">Node.js :4001</text>
+  <rect x="235" y="253" width="150" height="40" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="310" y="270" text-anchor="middle" fill="#bfdbfe" font-size="11" font-weight="bold">Products Service</text>
+  <text x="310" y="285" text-anchor="middle" fill="#93c5fd" font-size="10">Node.js :4002</text>
+  <rect x="400" y="253" width="150" height="40" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="475" y="270" text-anchor="middle" fill="#bfdbfe" font-size="11" font-weight="bold">Cart Service</text>
+  <text x="475" y="285" text-anchor="middle" fill="#93c5fd" font-size="10">Node.js :4003</text>
+  <rect x="565" y="253" width="165" height="40" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="647" y="270" text-anchor="middle" fill="#bfdbfe" font-size="11" font-weight="bold">Orders Service</text>
+  <text x="647" y="285" text-anchor="middle" fill="#93c5fd" font-size="10">Node.js :4004</text>
+
+  <!-- Arrow -->
+  <line x1="400" y1="305" x2="400" y2="335" stroke="#3b82f6" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Database Layer -->
+  <rect x="50" y="338" width="700" height="70" rx="8" fill="#451a03" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="400" y="358" text-anchor="middle" fill="#fcd34d" font-size="11" font-weight="bold">DATA LAYER — Docker Volumes</text>
+  <rect x="70" y="365" width="155" height="32" rx="6" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+  <text x="147" y="385" text-anchor="middle" fill="#fef3c7" font-size="10">PostgreSQL — users_db</text>
+  <rect x="240" y="365" width="155" height="32" rx="6" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+  <text x="317" y="385" text-anchor="middle" fill="#fef3c7" font-size="10">PostgreSQL — products_db</text>
+  <rect x="410" y="365" width="155" height="32" rx="6" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+  <text x="487" y="385" text-anchor="middle" fill="#fef3c7" font-size="10">PostgreSQL — cart/orders</text>
+  <rect x="580" y="365" width="155" height="32" rx="6" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+  <text x="657" y="385" text-anchor="middle" fill="#fef3c7" font-size="10">File Storage (uploads)</text>
+
+  <!-- Divider -->
+  <line x1="50" y1="430" x2="750" y2="430" stroke="#475569" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="400" y="445" text-anchor="middle" fill="#94a3b8" font-size="11">DevOps Infrastructure</text>
+
+  <!-- DevOps Layer -->
+  <rect x="50" y="452" width="155" height="60" rx="8" fill="#14532d" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="127" y="475" text-anchor="middle" fill="#86efac" font-size="12" font-weight="bold">Docker</text>
+  <text x="127" y="492" text-anchor="middle" fill="#bbf7d0" font-size="10">Containerization</text>
+  <text x="127" y="505" text-anchor="middle" fill="#bbf7d0" font-size="10">docker-compose.yml</text>
+
+  <rect x="220" y="452" width="155" height="60" rx="8" fill="#14532d" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="297" y="475" text-anchor="middle" fill="#86efac" font-size="12" font-weight="bold">Kubernetes</text>
+  <text x="297" y="492" text-anchor="middle" fill="#bbf7d0" font-size="10">K3s Cluster</text>
+  <text x="297" y="505" text-anchor="middle" fill="#bbf7d0" font-size="10">Orchestration</text>
+
+  <rect x="390" y="452" width="155" height="60" rx="8" fill="#14532d" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="467" y="475" text-anchor="middle" fill="#86efac" font-size="12" font-weight="bold">CI/CD</text>
+  <text x="467" y="492" text-anchor="middle" fill="#bbf7d0" font-size="10">GitHub Actions</text>
+  <text x="467" y="505" text-anchor="middle" fill="#bbf7d0" font-size="10">Auto deploy</text>
+
+  <rect x="560" y="452" width="190" height="60" rx="8" fill="#14532d" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="655" y="475" text-anchor="middle" fill="#86efac" font-size="12" font-weight="bold">Monitoring</text>
+  <text x="655" y="492" text-anchor="middle" fill="#bbf7d0" font-size="10">Prometheus + Grafana</text>
+  <text x="655" y="505" text-anchor="middle" fill="#bbf7d0" font-size="10">:3000 dashboard</text>
+
+  <!-- GitHub -->
+  <rect x="50" y="530" width="700" height="44" rx="8" fill="#1c1917" stroke="#78716c" stroke-width="1.5"/>
+  <text x="400" y="550" text-anchor="middle" fill="#d6d3d1" font-size="12" font-weight="bold">GitHub — github.com/5678195/bazaario-ecommerce</text>
+  <text x="400" y="567" text-anchor="middle" fill="#a8a29e" font-size="10">Source code · Dockerfiles · K8s manifests · CI/CD workflows · README</text>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+  </defs>
+</svg>

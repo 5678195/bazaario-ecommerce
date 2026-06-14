@@ -28,6 +28,8 @@
 ---
 
 ## 🏗️ Architecture
+
+![Bazaario Architecture](docs/architecture.svg)
 Client (React Storefront + Admin Panel)
 
 ↓ HTTPS
