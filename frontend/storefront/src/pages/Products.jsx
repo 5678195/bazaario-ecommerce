@@ -28,7 +28,7 @@ export default function Products() {
   }, [search, categoryId]);
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-12">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
       <h1 className="text-3xl font-bold text-[#1B1F3B] mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
         All Products
       </h1>

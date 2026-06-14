@@ -37,7 +37,7 @@ export default function Cart() {
 
       <div className="space-y-4">
         {cart.items.map(item => (
-          <div key={item.id} className="flex items-center gap-4 bg-white border border-gray-200 rounded-lg p-4">
+          <div key={item.id} className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 bg-white border border-gray-200 rounded-lg p-4">
             <div className="w-20 h-20 bg-[#F7F5F0] rounded-md flex items-center justify-center overflow-hidden flex-shrink-0">
               {item.image_url ? (
                 <img src={item.image_url} alt={item.product_name} className="w-full h-full object-cover" />
@@ -46,14 +46,14 @@ export default function Cart() {
               )}
             </div>
 
-            <div className="flex-1">
+            <div className="flex-1 min-w-0">
               <h3 className="font-semibold text-[#1B1F3B]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                 {item.product_name}
               </h3>
               <p className="text-sm text-gray-500">{formatPrice(item.product_price)} each</p>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-between sm:justify-start gap-2 w-full sm:w-auto">
               <button
                 onClick={() => updateQuantity(item.product_id, item.quantity - 1)}
                 className="w-8 h-8 border border-gray-300 rounded-md hover:bg-gray-100 transition-colors"
@@ -69,7 +69,7 @@ export default function Cart() {
               </button>
             </div>
 
-            <div className="w-24 text-right font-semibold text-[#1B1F3B]">
+            <div className="w-full sm:w-24 text-left sm:text-right font-semibold text-[#1B1F3B]">
               {formatPrice(item.product_price * item.quantity)}
             </div>
 

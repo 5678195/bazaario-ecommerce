@@ -14,12 +14,12 @@ export default function Navbar() {
 
   return (
     <header className="bg-[#1B1F3B] text-white sticky top-0 z-50 shadow-md">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between flex-wrap gap-3">
         <Link to="/" className="font-bold text-2xl tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           Bazaa<span className="text-[#FF8C42]">rio</span>
         </Link>
 
-        <nav className="flex items-center gap-6 text-sm font-medium">
+        <nav className="flex items-center gap-3 sm:gap-6 text-xs sm:text-sm font-medium flex-wrap">
           <Link to="/" className="hover:text-[#FF8C42] transition-colors">Home</Link>
           <Link to="/products" className="hover:text-[#FF8C42] transition-colors">Products</Link>
 

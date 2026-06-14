@@ -6,7 +6,7 @@ class OrderModel {
     try {
       await client.query('BEGIN');
       const orderRes = await client.query(
-        'INSERT INTO orders (user_id, total, shipping_address, status) VALUES ($1, $2, $3, $4) RETURNING *',
+        'INSERT INTO orders (user_id, total_amount, shipping_address, status) VALUES ($1, $2, $3, $4) RETURNING *',
         [userId, total, shipping_address, 'pending']
       );
       const order = orderRes.rows[0];

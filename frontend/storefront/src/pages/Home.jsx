@@ -16,7 +16,7 @@ export default function Home() {
     <div>
       {/* Hero */}
       <section className="bg-[#1B1F3B] text-white">
-        <div className="max-w-6xl mx-auto px-6 py-20 flex flex-col items-start">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20 flex flex-col items-start">
           <span className="text-[#FF8C42] font-semibold uppercase tracking-widest text-sm mb-3">
             New season, new tech
           </span>
@@ -39,7 +39,7 @@ export default function Home() {
       </section>
 
       {/* Featured products */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-bold text-[#1B1F3B]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Featured Products
