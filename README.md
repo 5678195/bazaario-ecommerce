@@ -2,20 +2,73 @@
 
 > Production-grade e-commerce platform built with microservices architecture, containerized with Docker, orchestrated with Kubernetes, and deployed on AWS EC2 with CI/CD via GitHub Actions.
 
-**Live Site:** https://bazaario.duckdns.org  
-**Admin Panel:** https://bazaario.duckdns.org/admin
+---
 
-## Features
+## 🌐 Live Links
 
-- JWT-based authentication (register, login, refresh tokens)
-- Product catalog with search, category filter, and image upload
-- Shopping cart with real-time quantity management
-- Order placement with OpenStreetMap location detection
-- Admin panel — manage products, categories, orders
-- Fully responsive (mobile + desktop)
-- HTTPS with Let's Encrypt SSL
+| | URL |
+|---|---|
+| 🛍️ Customer Site | https://bazaario.duckdns.org |
+| 🔧 Admin Panel | https://bazaario.duckdns.org/admin |
+| 📊 Grafana Dashboard | http://54.197.155.121:3000 |
 
-## Tech Stack
+---
+
+## ✨ Features
+
+- 🔐 JWT-based authentication (register, login, refresh tokens)
+- 🛍️ Product catalog with search, category filter, and image upload
+- 🛒 Shopping cart with real-time quantity management
+- 📦 Order placement with OpenStreetMap location detection
+- 👨‍💼 Admin panel — manage products, categories, orders
+- 📱 Fully responsive (mobile + desktop)
+- 🔒 HTTPS with Let's Encrypt SSL
+- 📊 Monitoring with Prometheus + Grafana
+
+---
+
+## 🏗️ Architecture
+Client (React Storefront + Admin Panel)
+
+↓ HTTPS
+
+Nginx Reverse Proxy + SSL
+
+bazaario.duckdns.org
+
+↓
+
+┌──────────────────────────────────────┐
+
+│  Docker Compose — Microservices      │
+
+│  users    products   cart   orders   │
+
+│  :4001     :4002    :4003   :4004    │
+
+└──────────────────────────────────────┘
+
+↓
+
+PostgreSQL (4 databases)
+
++ File Storage (uploads)
+
+↓
+
+┌──────────────────────────────────────┐
+
+│  DevOps                              │
+
+│  Docker · K8s · GitHub Actions       │
+
+│  Prometheus · Grafana · PM2          │
+
+└──────────────────────────────────────┘
+
+AWS EC2 (Ubuntu 24)---
+
+## 🛠️ Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -31,7 +84,9 @@
 | Deployment | AWS EC2 (Ubuntu 24) |
 | Web Server | Nginx + SSL (Let's Encrypt) |
 
-## Microservices
+---
+
+## 🚀 Microservices
 
 | Service | Port | Description |
 |---------|------|-------------|
@@ -40,15 +95,26 @@
 | cart-service | 4003 | Cart management |
 | orders-service | 4004 | Order lifecycle |
 
-## Run Locally with Docker
+---
 
-\`\`\`bash
+## 🐳 Run Locally with Docker
+
+```bash
 git clone https://github.com/5678195/bazaario-ecommerce.git
 cd bazaario-ecommerce
 docker compose up --build -d
-\`\`\`
 
-## Developer
+# Health checks
+curl http://localhost:4001/health
+curl http://localhost:4002/health
+curl http://localhost:4003/health
+curl http://localhost:4004/health
+```
+
+---
+
+## 👨‍💻 Developer
 
 **Zohaib Abbasi** — Computer Science Graduate | Aspiring DevOps Engineer  
-GitHub: https://github.com/5678195
+📧 abbasizohaib215@gmail.com  
+🔗 GitHub: https://github.com/5678195
