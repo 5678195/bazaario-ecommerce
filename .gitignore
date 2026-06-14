@@ -24,3 +24,5 @@ uploads/
 
 # Docker
 .dockerignore
+*.sql
+*.pem
