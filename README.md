@@ -29,6 +29,9 @@
 
 ## 🏗️ Architecture
 
+![Architecture](docs/architecture.svg)
+
+
 
 ## 🛠️ Tech Stack
 
