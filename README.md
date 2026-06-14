@@ -29,46 +29,6 @@
 
 ## 🏗️ Architecture
 
-![Bazaario Architecture](docs/architecture.svg)
-Client (React Storefront + Admin Panel)
-
-↓ HTTPS
-
-Nginx Reverse Proxy + SSL
-
-bazaario.duckdns.org
-
-↓
-
-┌──────────────────────────────────────┐
-
-│  Docker Compose — Microservices      │
-
-│  users    products   cart   orders   │
-
-│  :4001     :4002    :4003   :4004    │
-
-└──────────────────────────────────────┘
-
-↓
-
-PostgreSQL (4 databases)
-
-+ File Storage (uploads)
-
-↓
-
-┌──────────────────────────────────────┐
-
-│  DevOps                              │
-
-│  Docker · K8s · GitHub Actions       │
-
-│  Prometheus · Grafana · PM2          │
-
-└──────────────────────────────────────┘
-
-AWS EC2 (Ubuntu 24)---
 
 ## 🛠️ Tech Stack
 
