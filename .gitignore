@@ -1,20 +1,26 @@
 ﻿# Dependencies
 node_modules/
+.npm
 
 # Environment files
 .env
 .env.local
+.env.production
 
-# Uploads
-uploads/
+# Build outputs
+dist/
+build/
 
 # Logs
 *.log
 npm-debug.log*
 
-# Build output
-dist/
-
 # OS files
 .DS_Store
 Thumbs.db
+
+# Uploads
+uploads/
+
+# Docker
+.dockerignore

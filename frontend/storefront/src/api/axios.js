@@ -1,25 +1,27 @@
 ﻿import axios from 'axios';
 
+const BASE_URL = 'http://34.202.231.99';
+
 const api = axios.create({
-  baseURL: 'http://localhost:4001/api',
+  baseURL: BASE_URL + '/api',
 });
 
 const productsApi = axios.create({
-  baseURL: 'http://localhost:4002/api',
+  baseURL: BASE_URL + '/api',
 });
 
 const cartApi = axios.create({
-  baseURL: 'http://localhost:4003/api',
+  baseURL: BASE_URL + '/api',
 });
 
 const ordersApi = axios.create({
-  baseURL: 'http://localhost:4004/api',
+  baseURL: BASE_URL + '/api',
 });
 
 const attachToken = (config) => {
   const token = localStorage.getItem('accessToken');
   if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
+    config.headers.Authorization = Bearer ;
   }
   return config;
 };
@@ -30,4 +32,4 @@ cartApi.interceptors.request.use(attachToken);
 ordersApi.interceptors.request.use(attachToken);
 
 export { api, productsApi, cartApi, ordersApi };
-export const IMAGE_BASE_URL = 'http://localhost:4002';
+export const IMAGE_BASE_URL = BASE_URL;

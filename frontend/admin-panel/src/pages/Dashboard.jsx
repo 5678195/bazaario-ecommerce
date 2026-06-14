@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { productsApi } from '../api/axios';
 import Sidebar from '../components/Sidebar';
 
@@ -18,7 +18,7 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex flex-col md:flex-row min-h-screen">
       <Sidebar />
       <main className="flex-1 p-8 bg-[#F7F5F0]">
         <h1 className="text-2xl font-bold text-[#1B1F3B] mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -40,7 +40,7 @@ export default function Dashboard() {
           </div>
           <div className="bg-white rounded-xl border border-gray-200 p-6">
             <p className="text-sm text-gray-500 mb-1">Status</p>
-            <p className="text-lg font-semibold text-green-600">● All systems operational</p>
+            <p className="text-lg font-semibold text-green-600">? All systems operational</p>
           </div>
         </div>
 

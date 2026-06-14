@@ -1,4 +1,4 @@
-ï»¿import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { productsApi, IMAGE_BASE_URL } from '../api/axios';
 import Sidebar from '../components/Sidebar';
 
@@ -119,7 +119,7 @@ export default function Products() {
     new Intl.NumberFormat('en-PK', { style: 'currency', currency: 'PKR', maximumFractionDigits: 0 }).format(price);
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex flex-col md:flex-row min-h-screen">
       <Sidebar />
       <main className="flex-1 p-8 bg-[#F7F5F0]">
         <div className="flex items-center justify-between mb-6">
@@ -155,12 +155,12 @@ export default function Products() {
                       {p.image_url ? (
                         <img src={`${IMAGE_BASE_URL}${p.image_url}`} alt={p.name} className="w-full h-full object-cover" />
                       ) : (
-                        <span className="text-gray-300 text-xs">â€”</span>
+                        <span className="text-gray-300 text-xs">—</span>
                       )}
                     </div>
                   </td>
                   <td className="px-4 py-3 font-medium text-[#1B1F3B]">{p.name}</td>
-                  <td className="px-4 py-3 text-gray-500">{p.category_name || 'â€”'}</td>
+                  <td className="px-4 py-3 text-gray-500">{p.category_name || '—'}</td>
                   <td className="px-4 py-3">{formatPrice(p.price)}</td>
                   <td className="px-4 py-3">{p.stock}</td>
                   <td className="px-4 py-3 text-right space-x-3">

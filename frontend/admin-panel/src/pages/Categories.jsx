@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { productsApi } from '../api/axios';
 import Sidebar from '../components/Sidebar';
 
@@ -45,7 +45,7 @@ export default function Categories() {
   };
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex flex-col md:flex-row min-h-screen">
       <Sidebar />
       <main className="flex-1 p-8 bg-[#F7F5F0]">
         <h1 className="text-2xl font-bold text-[#1B1F3B] mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>

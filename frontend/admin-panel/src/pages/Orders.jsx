@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Sidebar from '../components/Sidebar';
 
 const ORDERS_API = 'http://localhost:4004/api';
@@ -52,7 +52,7 @@ export default function Orders() {
     }).format(price);
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex flex-col md:flex-row min-h-screen">
       <Sidebar />
       <main className="flex-1 p-8 bg-[#F7F5F0]">
         <h1 className="text-2xl font-bold text-[#1B1F3B] mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -73,7 +73,7 @@ export default function Orders() {
                       Order #{order.id}
                     </h3>
                     <p className="text-sm text-gray-500">
-                      User ID: {order.user_id} — {new Date(order.created_at).toLocaleDateString('en-PK', {
+                      User ID: {order.user_id} � {new Date(order.created_at).toLocaleDateString('en-PK', {
                         year: 'numeric', month: 'long', day: 'numeric'
                       })}
                     </p>
