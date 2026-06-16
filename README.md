@@ -10,7 +10,7 @@
 |---|---|
 | 🛍️ Customer Site | https://bazaario.duckdns.org |
 | 🔧 Admin Panel | https://bazaario.duckdns.org/admin |
-| 📊 Grafana Dashboard | http://54.197.155.121:3000 |
+| 📊 Grafana Dashboard |http://98.86.99.37:3000
 
 ---
 
